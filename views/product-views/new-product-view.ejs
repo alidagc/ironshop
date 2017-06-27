@@ -1,0 +1,19 @@
+<h2>New Product</h2>
+<form action="/products" method="post">
+<%# the action link takes us to step two of the post sequence.%>
+  <label for="product-name-input">Name of product</label>
+  <input id="product-name-input" type="text" name="productName">
+                                                <!-- req.body.productName -->
+  <br>
+  <label for="product-price-input">Price</label>
+  <input id="product-price-input" type="number" step="1.11" name="productPrice">
+  <br>                                                <!-- req.body.productPrice -->
+<%# Step allows you to put decimals%>
+  <label for="product-image-input">Image URL</label>
+  <input id="product-image-input" type="url" name="productImageUrl">
+  <br>                                   <!-- req.body.productImageUrl -->
+  <label for="product-description-input">Description</label>
+  <textarea id="product-description-input" type="text" name="productDescription"></textarea>
+  <br>                                          <!-- req.body.productDescription -->
+  <button>Add this product</button>
+</form>

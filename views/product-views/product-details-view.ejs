@@ -1,0 +1,17 @@
+<h2>Product Details</h2>
+<h3><%= productDetails.name %></h3>
+<br>
+<p> $ <%= productDetails.price %> </p>
+<br>
+<img src="<%=productDetails.imageUrl%>">
+<br>
+<p><%=productDetails.description%></p>
+<br>
+<a href="/products">Go back to Products</a>
+<br>
+<a href="/products/<%=productDetails._id%>">View Product Details</a>
+<br>
+<a href="/products/<%=productDetails._id%>/edit">Edit Product Details</a>
+<br>
+<form action="/products/<%=productDetails._id%>/remove" method="post"><button> Delete Product</button></form>
+<br>

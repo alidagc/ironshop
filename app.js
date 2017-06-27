@@ -5,7 +5,9 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/ironshop');
 
 const app = express();
 
@@ -28,10 +30,12 @@ app.use(layouts);
 const index = require('./routes/index');
 app.use('/', index);
 
+const myProductRoutes = require('./routes/product-routes');
+app.use('/', myProductRoutes);
 
 
 //START ERROR HANDLING--------------------------------------------
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler. These need to go after our common routes, since it's the default.
 app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;

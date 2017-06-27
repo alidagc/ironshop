@@ -1,0 +1,17 @@
+<h2>These are my products</h2>
+
+<ul>
+  <% productsForView.forEach((oneProduct)=>{ %>
+    <li>
+      <h3><%= oneProduct.name %></h3>
+      <p> $ <%= oneProduct.price %> </p>
+      <a href="/products/<%=oneProduct._id%>">View Product Details</a>
+                                <!-- req.param.myID-->
+      <br>
+      <a href="/products/<%=oneProduct._id%>/edit">Edit Product Details</a>
+      <br>
+      <form action="/products/<%=oneProduct._id%>/remove" method="post"><button> Delete Product</button></form>
+      <br>
+     </li>
+  <% }) %>
+</ul>
